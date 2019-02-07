@@ -156,6 +156,7 @@ const skills = [
   'HTML',
   'CSS',
   'Javascript',
+  'Typescript',
   'React',
   'React native',
   'Angular',
@@ -175,7 +176,11 @@ export default () => (
     <section className="hero is-light is-bold is-medium">
       <div className="hero-body">
         <div className="container">
-          <h1 className="title">Idraki Muhamad</h1>
+          <h1 className="title">
+            <Link href="/" passHref>
+              <a>Idraki Muhamad</a>
+            </Link>
+          </h1>
           <h2 className="subtitle is-size-4">CV</h2>
           <div className="skills">
             <SkillsRow>
