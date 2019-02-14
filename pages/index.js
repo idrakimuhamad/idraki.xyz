@@ -29,7 +29,7 @@ export default () => {
     config,
     opacity: toggle ? 1 : 0,
     x: toggle ? 0 : -40,
-    height: toggle ? 80 : 0,
+    height: toggle ? 'auto' : 0,
     from: { opacity: 0, x: -40, height: 0 }
   })
 
@@ -37,7 +37,7 @@ export default () => {
     config,
     opacity: toggle ? 1 : 0,
     x: toggle ? 0 : -40,
-    height: toggle ? 80 : 0,
+    height: toggle ? 'auto' : 0,
     from: { opacity: 0, x: -40, height: 0 }
   })
 
@@ -57,7 +57,7 @@ export default () => {
       <section className="hero is-light is-bold is-fullheight">
         <div className="hero-body">
           <div className="container">
-            <TitleTrail className="title">
+            <TitleTrail className="title is-size-3-mobile">
               {trail1.map(({ x, height, ...rest }, index) => (
                 <animated.div
                   key={title[index]}
@@ -67,8 +67,7 @@ export default () => {
                 </animated.div>
               ))}
             </TitleTrail>
-            {/* <h1 className="title">Idraki Muhamad</h1> */}
-            <h2 className="subtitle is-size-3">
+            <h2 className="subtitle is-size-3 is-size-5-mobile">
               {trail2.map(({ x, height, ...rest }, index) => (
                 <animated.span
                   key={subtitle[index]}
@@ -78,7 +77,6 @@ export default () => {
                 </animated.span>
               ))}
             </h2>
-            {/* <h2 className="subtitle is-size-3">Front-End Developer & Designer</h2> */}
           </div>
         </div>
         <div className="hero-foot">
@@ -95,21 +93,6 @@ export default () => {
                     </Link>
                   </animated.li>
                 ))}
-                {/* <li>
-                  <Link href="https://github.com/idrakimuhamad" passHref>
-                    <a>Github</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://dribbble.com/idraki" passHref>
-                    <a>Dribbble</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/cv" passHref>
-                    <a>CV</a>
-                  </Link>
-                </li> */}
               </ul>
             </nav>
           </div>
