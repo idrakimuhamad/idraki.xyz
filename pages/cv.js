@@ -29,7 +29,7 @@ const jobs = [
     company: 'RHB Bank Berhad (Digital Transformation)',
     title: 'Front-end Architect',
     descriptions: [
-      'Making React and React Native part of traditional banking. Changing the bank one step at a time. Involved with RHB Insurance mobile app and admin development.'
+      'Develop the RHB Insurance mobile app. Architect and develop the code base for the next internet banking and the design system.'
     ]
   },
   {
@@ -159,6 +159,7 @@ const skills = [
   'Typescript',
   'React',
   'React native',
+  'Design system',
   'Angular',
   'Vue',
   'Node.js',
@@ -181,7 +182,7 @@ export default () => (
               <a>Idraki Muhamad</a>
             </Link>
           </h1>
-          <h2 className="subtitle is-size-4">CV</h2>
+          {/* <h2 className="subtitle is-size-4">CV</h2> */}
           <div className="skills">
             <SkillsRow>
               <div className="tags">
@@ -198,7 +199,7 @@ export default () => (
     </section>
     <section className="section">
       <div className="container">
-        {jobs.map(job => (
+        {jobs.map((job, index) => (
           <JobContainer key={job.date}>
             <DateText>{job.date}</DateText>
             <div className="meta">
@@ -210,8 +211,10 @@ export default () => (
                 <p key={desc}>{desc}</p>
               ))}
             </JobDetails>
+            {index === 2 && <div class="page-break" />}
           </JobContainer>
         ))}
+        <div class="page-break" />
         <div className="content">
           <hr className="hr" />
           <h4 className="title is-size-4">Educations</h4>
@@ -231,7 +234,7 @@ export default () => (
           <hr className="hr" />
           <h4 className="title is-size-4">Projects</h4>
           <div className="education-list">
-            {projects.map(project => (
+            {projects.map((project, index) => (
               <ProjectContainer key={project.date}>
                 <DateText>{project.date}</DateText>
                 <div className="meta">
@@ -243,10 +246,13 @@ export default () => (
                   ))}
                   {project.url && (
                     <Link href={project.url}>
-                      <a target="_blank">View project</a>
+                      <a className="view-project" target="_blank">
+                        View project
+                      </a>
                     </Link>
                   )}
                 </ProjectDetails>
+                {index === 1 && <div class="page-break" />}
               </ProjectContainer>
             ))}
           </div>
