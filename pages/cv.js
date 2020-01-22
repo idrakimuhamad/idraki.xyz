@@ -23,9 +23,16 @@ const ProjectDetails = styled.div`
   padding: 1rem 0;
 `
 
-const jobs = [
+const jobs = [{
+  date: 'Oct 2019 - Present',
+    company: 'Maybank',
+    title: 'AVP, Senior Front-end Developer',
+    descriptions: [
+      'Currently involved with development of the next mobile banking app from Maybank, which will be more than just your account balance, and allow you to do more with it.'
+    ]
+},
   {
-    date: 'Nov 2017 - Present',
+    date: 'Nov 2017 - Oct 2019',
     company: 'RHB Bank Berhad (Digital Transformation)',
     title: 'Front-end Architect',
     descriptions: [
