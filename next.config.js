@@ -13,14 +13,13 @@ module.exports = (phase, { defaultConfig }) => {
   const withSass = require('@zeit/next-sass');
   const withTM = require('next-transpile-modules');
 
-  return withTM(
-    withSass({
+  return withSass(
+    withTM({
       target: 'serverless',
       transpileModules: ['react-bulma-components'],
       sassLoaderOptions: {
         includePaths: ['./styles']
       }
     })
-    // )
   );
 };
