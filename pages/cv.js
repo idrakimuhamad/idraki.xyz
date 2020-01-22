@@ -33,7 +33,7 @@ const jobs = [{
 },
   {
     date: 'Nov 2017 - Oct 2019',
-    company: 'RHB Bank Berhad (Digital Transformation)',
+    company: 'RHB Bank Berhad',
     title: 'Front-end Architect',
     descriptions: [
       'Develop the RHB Insurance mobile app. Architect and develop the code base for the next internet banking and the design system.'
