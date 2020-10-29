@@ -101,6 +101,14 @@ const educations = [
 
 const projects = [
   {
+    date: 'October 2019 – October 2020',
+    name: 'MAE by Maybank2u',
+    descriptions: [
+      "The next big thing from Maybank, and the future replacement of the current Maybank2u app. Life's about to get even easier. Sort out spending, savings, cravings and more with MAE. It also comes with Maybank2u banking features."
+    ],
+    url: 'https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/services/digital_banking/mae_by_maybank2u.page'
+  },
+  {
     date: 'Apr 2018 – Present',
     name: 'Bijak Trivia',
     descriptions: [
