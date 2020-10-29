@@ -1,16 +1,8 @@
+// See https://tailwindcss.com/docs/configuration for details
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      colors: {
-        'accent-1': '#333',
-      },
-    },
-  },
+  purge: ["./src/**/*.js"],
+  theme: {},
   variants: {},
-  plugins: [],
-}
+  // https://github.com/tailwindcss/custom-forms
+  plugins: [require("@tailwindcss/custom-forms")],
+};
