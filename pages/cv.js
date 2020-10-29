@@ -28,7 +28,8 @@ const jobs = [{
     company: 'Maybank',
     title: 'AVP, Senior Front-end Developer',
     descriptions: [
-      'Currently involved with development of the next mobile banking app from Maybank, which will be more than just your account balance, and allow you to do more with it.'
+      "Part of the team involved in the development of Maybank's latest app, MAE by Maybank2u. Lead a group of Front-end and mobile developers, and asserting best structure and implementation as possible, while mentoring new developers and those that aren't familiar with the stack we had. Whenever possible, tried to involved in the art direction and the app interation and transition, as much as possible.",
+      "The app now available in App Store and the PlayStore."
     ]
 },
   {
