@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
-  "version": "4.0.0",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "name": "idraki.xyz",
+  "description": "Personal site of idraki muhamad",
+  "version": "2.0.0",
+  "author": "Idraki Muhamad <idrakimuhamad@gmail.com>",
   "dependencies": {
+    "framer-motion": "^2.9.4",
     "gatsby": "2.24.91",
     "gatsby-plugin-manifest": "2.4.35",
     "gatsby-plugin-offline": "3.2.38",
@@ -19,7 +20,8 @@
     "gatsby",
     "tailwind",
     "tailwindcss",
-    "purgecss"
+    "purgecss",
+    "react"
   ],
   "license": "MIT",
   "scripts": {
