@@ -18,6 +18,7 @@ function IndexPage() {
   const bgControl = useAnimation();
   const introControls = useAnimation();
   const controls = useAnimation();
+  const logoControl = useAnimation();
 
   async function initAnimate() {
     await bgControl.start({
@@ -50,6 +51,20 @@ function IndexPage() {
         y: { stiffness: 1000, velocity: -100 },
       },
     }));
+
+    await logoControl.start(() => ({
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 2,
+      },
+    }));
+
+    await bgControl.start({
+      opacity: [1, 0.9, 1],
+      transition: { duration: 10, repeat: Infinity },
+    });
   }
 
   useEffect(() => {
