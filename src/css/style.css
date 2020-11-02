@@ -8,3 +8,19 @@
 .hero-bg {
   background-color: #00071c;
 }
+.skill-item:after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 10px;
+  right: 6px;
+  border-radius: 2px;
+}
+.skill-item:last-child:after {
+  content: '';
+  position: static;
+  width: 0;
+  height: 0;
+}
