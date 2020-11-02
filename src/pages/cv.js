@@ -155,43 +155,57 @@ const projects = [
   },
 ];
 
-// const skills = [
-//   'HTML',
-//   'CSS',
-//   'Javascript',
-//   'Typescript',
-//   'React',
-//   'React native',
-//   'Design system',
-//   'Angular',
-//   'Vue',
-//   'Node.js',
-//   'Next.js',
-//   'Gatsby',
-//   'MongoDB',
-//   'Meteor.js',
-//   'Web app',
-//   'Mobile app',
-//   'Web design'
-// ]
-
-// const titleAnimateDown = {
-//   y: 50,
-// };
-
-// const titleAnimateUp = {
-//   y: 0,
-// };
+const skills = [
+  'HTML',
+  'CSS',
+  'Javascript',
+  'Typescript',
+  'React',
+  'React native',
+  'Design system',
+  'Angular',
+  'Vue',
+  'Node.js',
+  'Next.js',
+  'Gatsby',
+  'MongoDB',
+  'Meteor.js',
+  'Web app',
+  'Mobile app',
+  'Web design',
+];
 
 function CVPage() {
   // const { scrollYProgress } = useViewportScroll();
   const ref = useRef();
   const { scrollYProgress } = useElementScroll(ref);
   const [isComplete, setIsComplete] = useState(false);
-  const yRange = useTransform(scrollYProgress, [0, 0.25], [0, -200]);
+  const yRange = useTransform(scrollYProgress, [0, 0.35], [0, -150]);
   const pathLength = useSpring(yRange, { stiffness: 400, damping: 90 });
 
-  useEffect(() => yRange.onChange((v) => setIsComplete(v >= 0.25)), [yRange]);
+  const skillVariant = {
+    visible: {
+      opacity: 1,
+      y: -150,
+      transition: {
+        y: { stiffness: 400, damping: 90 },
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: '100%',
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
+
+  useEffect(() => {
+    yRange.onChange((v) => {
+      console.log('y range', v);
+      setIsComplete(v <= -150);
+    });
+  }, [isComplete, yRange]);
 
   useEffect(() => {
     document.getElementsByTagName('html')[0].style.overflow = 'hidden';
@@ -215,7 +229,7 @@ function CVPage() {
       />
 
       <section className="flex flex-col md:flex-row-reverse">
-        <div className="hero-bg w-full h-screen flex justify-center items-center md:w-3/12">
+        <div className="hero-bg w-full h-screen flex flex-col justify-center items-start md:w-3/12">
           <motion.div
             initial={{
               y: 44,
@@ -226,9 +240,9 @@ function CVPage() {
               opacity: 1,
             }}
             style={{
-              y: isComplete ? -200 : pathLength,
+              y: isComplete ? -150 : pathLength,
             }}
-            className="flex flex-col justify-center items-start p-6 md:p-12">
+            className="flex flex-col px-6 md:px-12">
             <h1 className="font-sans text-5xl font-bold text-gray-700 text-left tracking-widest uppercase">
               Idraki
               <br />
@@ -237,6 +251,23 @@ function CVPage() {
             <p className="font-sans text-base text-white">
               Front-End Developer
             </p>
+          </motion.div>
+          <motion.div
+            animate={isComplete ? 'visible' : 'hidden'}
+            variants={skillVariant}
+            className="hidden md:block px-6 md:px-12">
+            <h5 className="font-sans font-bold text-gray-500 tracking-wide uppercase py-4">
+              Skills
+            </h5>
+            <div className="flex flex-row flex-wrap">
+              {skills.map((skill) => (
+                <div
+                  key={skill}
+                  className="skill-item relative flex-initial pr-4">
+                  <p className="font-sans text-base text-white">{skill}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
         <div
