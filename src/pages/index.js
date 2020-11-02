@@ -83,7 +83,7 @@ function IndexPage() {
           `html`,
           `css`,
         ]}
-        title="Idraki Muhamad"
+        title="Front-End Developer"
       />
 
       <motion.section
